@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: aquamarine;
+  margin: 0;
+}
+
+.grid-container {
+  width: 720px;
+  height: 480px;
+  display: flex;
+  flex-wrap: wrap;
+  border: 40px solid red;
+  border-radius: 50px;
+  box-sizing: content-box;
+}
+
+.pixel {
+  background-color: grey;
+}
+
+button {
+  margin-bottom: 16px;
+}
