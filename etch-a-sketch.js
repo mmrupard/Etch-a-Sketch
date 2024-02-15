@@ -5,9 +5,8 @@ function createPixels(size) {
     for (let col = 0; col < size; col++) {
       const pixel = document.createElement("div");
       pixel.classList.add("pixel");
-      //TODO: figure out how to remove these magic numbers so that the width and height can be resized in the css without touching the script.
-      pixel.style.width = 720 / size + "px";
-      pixel.style.height = 480 / size + "px";
+      pixel.style.width = `calc(100% / ${size})`;
+      pixel.style.height = `calc(100% / ${size})`;
       pixel.addEventListener("mouseover", mouseoverEventHandler);
 
       gridContainer.appendChild(pixel);
@@ -15,8 +14,15 @@ function createPixels(size) {
   }
 }
 
+function generateColor() {
+  let red = Math.floor(Math.random() * 256);
+  let green = Math.floor(Math.random() * 256);
+  let blue = Math.floor(Math.random() * 256);
+
+  return `rgb(${red},${green},${blue})`;
+}
 const mouseoverEventHandler = (e) => {
-  e.target.style.backgroundColor = "#000";
+  e.target.style.backgroundColor = generateColor();
 };
 
 function removePixels() {
