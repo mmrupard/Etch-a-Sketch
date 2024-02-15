@@ -15,12 +15,14 @@ function createPixels(size) {
 }
 
 function generateColor() {
+  // RGB values can range between 0 and 255
   let red = Math.floor(Math.random() * 256);
   let green = Math.floor(Math.random() * 256);
   let blue = Math.floor(Math.random() * 256);
 
   return `rgb(${red},${green},${blue})`;
 }
+
 const mouseoverEventHandler = (e) => {
   e.target.style.backgroundColor = generateColor();
 };
